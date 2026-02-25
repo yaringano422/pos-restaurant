@@ -1,11 +1,9 @@
 import dotenv from "dotenv";
-import path from "path";
-
-dotenv.config({ path: path.resolve(__dirname, "../../.env") });
+dotenv.config();
 
 export const env = {
   nodeEnv: process.env.NODE_ENV || "development",
-  port: parseInt(process.env.PORT || "10000", 10),
+  port: parseInt(process.env.PORT || "4000", 10),
   db: {
     host: process.env.DB_HOST,
     port: parseInt(process.env.DB_PORT || "6543", 10),
@@ -22,7 +20,3 @@ export const env = {
   },
   defaultBranchId: process.env.DEFAULT_BRANCH_ID,
 };
-
-if (!env.db.host || !env.db.user || !env.db.password) {
-  console.error("❌ ERROR: Faltan variables de base de datos en el entorno.");
-}
