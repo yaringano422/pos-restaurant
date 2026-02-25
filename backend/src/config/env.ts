@@ -18,5 +18,5 @@ export const env = {
   cors: {
     origin: process.env.CORS_ORIGIN || "*",
   },
-  defaultBranchId: process.env.DEFAULT_BRANCH_ID,
+  defaultBranchId: process.env.DEFAULT_BRANCH_ID as string,
 };
