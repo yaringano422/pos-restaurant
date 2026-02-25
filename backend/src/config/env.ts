@@ -12,7 +12,7 @@ export const env = {
     password: process.env.DB_PASSWORD,
   },
   jwt: {
-    secret: process.env.JWT_SECRET || "pos-restaurant-secret-2026",
+    secret: process.env.JWT_SECRET as string,
     expiresIn: process.env.JWT_EXPIRES_IN || "24h",
   },
   cors: {
